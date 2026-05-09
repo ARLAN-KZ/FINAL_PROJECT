@@ -1,0 +1,102 @@
+--- Task 1 ---
+Name: Alice
+Age: 25
+City: Astana
+Name: Bob
+Age: 30
+City: Almaty
+Enter name: Enter age: Enter a hobby: Name: Charlie
+Age: 22
+City: Astana
+Hobby: Chess
+
+--- Task 2 ---
+Enter a list of numbers (separated by spaces): Enter threshold X: Original list: [1, 2, 3, 4, 5, 12, 13, 14]
+Squared numbers: [1, 4, 9, 16, 25, 144, 169, 196]
+Even numbers: [2, 4, 12, 14]
+Numbers greater than 10: [12, 13, 14]
+
+--- Task 3 ---
+Enter a new book details:
+Title: Author: Number of pages: The book 'To Kill a Mockingbird' by Harper Lee has 281 pages.
+The book 'The Great Gatsby' by F. Scott Fitzgerald has 180 pages.
+The book '1984' by George Orwell has 328 pages.
+
+--- Task 4 ---
+Enter rectangle width: Enter rectangle height: Rectangle(width=5.0, height=10.0)
+Area: 50.0
+Perimeter: 30.0
+
+--- Task 5 ---
+Car Make: Car Model: Year: Number of doors: Vehicle: Honda Civic (2022)
+Doors: 4
+Beep beep!
+
+--- Task 6 ---
+Enter radius for the circle: Enter side length for the square: This is a circle with radius 5.0.
+Area: 78.54
+This is a square with side 4.0.
+Area: 16.0
+
+--- Task 7 ---
+Author Name: Author Nationality: Book Title: Publication Year: Book: "The Old Man and the Sea" (1952)
+Author: Ernest Hemingway (American)
+
+--- Task 8 ---
+Enter new student name: Enter student ID: Enter three grades (spaces): Data written to students.txt.
+--- Loaded Students ---
+Alice (ID: 001) - Average: 89.0
+Bob (ID: 002) - Average: 75.0
+Charlie (ID: 003) - Average: 92.3
+
+--- Task 9 ---
+New Employee Name: Age: Department: Salary: Written 3 employees to employees.csv
+Applied 5% raise to all employees.
+Updated data written to employees_updated.csv
+
+--- Task 10 ---
+
+1. Add Employee
+2. Save to File
+3. Load from File
+4. Payroll Report
+5. Exit
+Choose option: Type (1:Hourly, 2:Salaried, 3:Commission): Name: ID: Annual Salary: 
+1. Add Employee
+2. Save to File
+3. Load from File
+4. Payroll Report
+5. Exit
+Choose option: 
+Payroll Report:
+John Doe (SalariedEmployee) - Monthly Pay: $5000.00
+
+1. Add Employee
+2. Save to File
+3. Load from File
+4. Payroll Report
+5. Exit
+Choose option: Saved.
+
+1. Add Employee
+2. Save to File
+3. Load from File
+4. Payroll Report
+5. Exit
+Choose option: Loaded.
+
+1. Add Employee
+2. Save to File
+3. Load from File
+4. Payroll Report
+5. Exit
+Choose option: 
+Payroll Report:
+John Doe (SalariedEmployee) - Monthly Pay: $5000.00
+
+1. Add Employee
+2. Save to File
+3. Load from File
+4. Payroll Report
+5. Exit
+Choose option: 
