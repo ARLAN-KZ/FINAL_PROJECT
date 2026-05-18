@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "customer": {
+            "name": "кре",
+            "phone": "ркерк",
+            "address": "екркерекрекер"
+        },
+        "items": {
+            "2": 1
+        },
+        "status": "pending"
+    }
+]
