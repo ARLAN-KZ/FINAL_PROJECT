@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Корзина</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>🛒 TechShop</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Главная</a>
+            <a href="{{ url_for('cart') }}">Корзина</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Ваша корзина</h2>
+        {% if cart_items %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Товар</th>
+                        <th>Цена</th>
+                        <th>Количество</th>
+                        <th>Итого</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in cart_items %}
+                    <tr>
+                        <td>{{ item.name }}</td>
+                        <td>{{ item.price }} ₸</td>
+                        <td>{{ item.quantity }}</td>
+                        <td>{{ item.total }} ₸</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            
+            <div class="cart-summary">
+                <h3>Общая стоимость: {{ total_price }} ₸</h3>
+                <div class="cart-actions">
+                    <a href="{{ url_for('clear_cart') }}" class="btn btn-secondary">Очистить корзину</a>
+                    <a href="{{ url_for('checkout') }}" class="btn">Оформить заказ</a>
+                </div>
+            </div>
+        {% else %}
+            <p>Ваша корзина пуста. Самое время <a href="{{ url_for('index') }}">что-нибудь купить</a>!</p>
+        {% endif %}
+    </main>
+</body>
+</html>

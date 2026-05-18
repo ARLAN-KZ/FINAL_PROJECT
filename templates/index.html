@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Мой Онлайн Магазин</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>🛒 TechShop</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Главная</a>
+            <a href="{{ url_for('cart') }}">Корзина</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Наши товары</h2>
+        <div class="products-grid">
+            {% for product in products %}
+            <div class="product-card">
+                <h3>{{ product.name }}</h3>
+                <p class="description">{{ product.description }}</p>
+                <p class="price">{{ product.price }} ₸</p>
+                <form action="{{ url_for('add_to_cart', product_id=product.id) }}" method="POST">
+                    <button type="submit" class="btn">В корзину</button>
+                </form>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+</body>
+</html>
