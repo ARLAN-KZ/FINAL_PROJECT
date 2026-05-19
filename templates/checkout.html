@@ -2,6 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Оформление заказа</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
@@ -11,30 +12,47 @@
         <nav>
             <a href="{{ url_for('index') }}">Главная</a>
             <a href="{{ url_for('cart') }}">Корзина</a>
+            {% if session.get('user') %}
+                <span style="margin-left: 15px; color: #bdc3c7;">Привет, <strong>{{ session['user']['username'] }}</strong>!</span>
+                <a href="{{ url_for('logout') }}" style="color: #e74c3c;">Выйти</a>
+            {% else %}
+                <a href="{{ url_for('login') }}">Войти</a>
+                <a href="{{ url_for('register') }}">Регистрация</a>
+            {% endif %}
         </nav>
     </header>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="flash-container">
+            {% for category, message in messages %}
+                <div class="flash flash-{{ category }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
 
     <main>
         {% if success %}
             <div class="success-message">
                 <h2>🎉 Заказ успешно оформлен!</h2>
                 <p>Спасибо за покупку. Наш менеджер свяжется с вами в ближайшее время.</p>
-                <a href="{{ url_for('index') }}" class="btn">На главную</a>
+                <a href="{{ url_for('index') }}" class="btn" style="width: auto;">На главную</a>
             </div>
         {% else %}
-            <h2>Оформление заказа</h2>
+            <h2 style="text-align: center; margin-bottom: 1.5rem;">Оформление заказа</h2>
             <form method="POST" class="checkout-form">
                 <div class="form-group">
                     <label for="name">Ваше имя:</label>
-                    <input type="text" id="name" name="name" required>
+                    <input type="text" id="name" name="name" placeholder="Иван Иванов" autocomplete="name" required>
                 </div>
                 <div class="form-group">
                     <label for="phone">Телефон:</label>
-                    <input type="tel" id="phone" name="phone" required>
+                    <input type="tel" id="phone" name="phone" placeholder="+7 (777) 777-77-77" autocomplete="tel" required>
                 </div>
                 <div class="form-group">
                     <label for="address">Адрес доставки:</label>
-                    <textarea id="address" name="address" rows="3" required></textarea>
+                    <textarea id="address" name="address" rows="3" placeholder="г. Астана, ул. Мәңгілік Ел, д. C1" autocomplete="street-address" required></textarea>
                 </div>
                 <button type="submit" class="btn">Подтвердить заказ</button>
             </form>

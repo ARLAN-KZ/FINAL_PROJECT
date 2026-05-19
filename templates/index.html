@@ -2,7 +2,8 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Мой Онлайн Магазин</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechShop - Главная</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
@@ -11,23 +12,44 @@
         <nav>
             <a href="{{ url_for('index') }}">Главная</a>
             <a href="{{ url_for('cart') }}">Корзина</a>
+            
+            {% if session.get('user') %}
+                <span class="user-welcome" style="margin-left: 15px; color: #555;">
+                    Привет, <strong>{{ session['user']['username'] }}</strong>!
+                </span>
+                <a href="{{ url_for('logout') }}" style="margin-left: 10px; color: #cc0000;">Выйти</a>
+            {% else %}
+                <a href="{{ url_for('login') }}" style="margin-left: 15px;">Войти</a>
+                <a href="{{ url_for('register') }}">Регистрация</a>
+            {% endif %}
         </nav>
     </header>
 
-    <main>
-        <h2>Наши товары</h2>
-        <div class="products-grid">
-            {% for product in products %}
-            <div class="product-card">
-                <h3>{{ product.name }}</h3>
-                <p class="description">{{ product.description }}</p>
-                <p class="price">{{ product.price }} ₸</p>
-                <form action="{{ url_for('add_to_cart', product_id=product.id) }}" method="POST">
-                    <button type="submit" class="btn">В корзину</button>
-                </form>
-            </div>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="flash-messages" style="padding: 10px 20px; background: #e0f7fa; color: #006064; text-align: center;">
+            {% for category, message in messages %}
+                <div class="flash-{{ category }}">{{ message }}</div>
             {% endfor %}
         </div>
+      {% endif %}
+    {% endwith %}
+
+    <main>
+    <h2>Наши товары</h2>
+    <div class="products-grid">
+        {% for product in products %}
+        <div class="product-card no-image">
+            <h3>{{ product.name }}</h3>
+            <p class="description">{{ product.description }}</p>
+            <p class="price">{{ product.price }} ₸</p>
+            
+            <form action="{{ url_for('add_to_cart', product_id=product.id) }}" method="POST">
+                <button type="submit" class="btn">В корзину</button>
+            </form>
+        </div>
+        {% endfor %}
+    </div>
     </main>
 </body>
 </html>

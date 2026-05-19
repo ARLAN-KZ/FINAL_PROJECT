@@ -1,20 +1,142 @@
 [
     {
         "id": 1,
-        "name": "Беспроводные наушники",
+        "name": "Беспроводные наушники TWS",
         "price": 15000,
-        "description": "Наушники с активным шумоподавлением и глубоким басом."
+        "description": "Наушники с активным шумоподавлением и глубоким басом.",
+        "image_url": "https://images.pexels.com/photos/3394656/pexels-photo-3394656.jpeg?auto=compress&cs=tinysrgb&w=500"
     },
     {
         "id": 2,
-        "name": "Умные часы",
+        "name": "Умные часы Smart Watch",
         "price": 32000,
-        "description": "Стильный аксессуар с трекером активности и мониторингом пульса."
+        "description": "Стильный аксессуар с трекером активности и мониторингом пульса.",
+        "image_url": "https://images.pexels.com/photos/4370376/pexels-photo-4370376.jpeg?auto=compress&cs=tinysrgb&w=500"
     },
     {
         "id": 3,
         "name": "Механическая клавиатура",
         "price": 24500,
-        "description": "RGB подсветка, переключатели Red Switches для идеального тайпинга."
+        "description": "RGB подсветка, переключатели Red Switches для идеального тайпинга.",
+        "image_url": "https://images.pexels.com/photos/8412288/pexels-photo-8412288.jpeg?auto=compress&cs=tinysrgb&w=500"
+    },
+    {
+        "id": 4,
+        "name": "Игровая компьютерная мышь",
+        "price": 18900,
+        "description": "Эргономичный дизайн, оптический сенсор 16000 DPI и программируемые кнопки.",
+        "image_url": "https://images.pexels.com/photos/2115256/pexels-photo-2115256.jpeg?auto=compress&cs=tinysrgb&w=500"
+    },
+    {
+        "id": 5,
+        "name": "Монитор 24\" IPS Full HD",
+        "price": 65000,
+        "description": "Безрамочный дисплей с частотой обновления 75 Гц и защитой зрения.",
+        "image_url": "https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=500"
+    },
+    {
+        "id": 6,
+        "name": "Внешний жесткий диск 1ТБ",
+        "price": 28000,
+        "description": "Портативный накопитель USB 3.0 для надежного хранения ваших данных.",
+        "image_url": "https://images.pexels.com/photos/3361483/pexels-photo-3361483.jpeg?auto=compress&cs=tinysrgb&w=500"
+    },
+    {
+        "id": 7,
+        "name": "Портативная Bluetooth колонка",
+        "price": 22000,
+        "description": "Влагозащита IPX7, мощный звук 20 Вт и до 12 часов автономной работы.",
+        "image_url": "https://images.pexels.com/photos/1034653/pexels-photo-1034653.jpeg?auto=compress&cs=tinysrgb&w=500"
+    },
+    {
+        "id": 8,
+        "name": "Внешний аккумулятор 20000 мАч",
+        "price": 14500,
+        "description": "Быстрая зарядка Power Delivery 22.5W, три выходных разъема.",
+        "image_url": "https://images.pexels.com/photos/4072681/pexels-photo-4072681.jpeg?auto=compress&cs=tinysrgb&w=500"
+    },
+    {
+        "id": 9,
+        "name": "Веб-камера 1080p Full HD",
+        "price": 16800,
+        "description": "Встроенный микрофон с шумоподавлением, отлично подходит для стримов и звонков.",
+        "image_url": "https://images.pexels.com/photos/8154245/pexels-photo-8154245.jpeg?auto=compress&cs=tinysrgb&w=500"
+    },
+    {
+        "id": 10,
+        "name": "Беспроводная зарядная станция 3-в-1",
+        "price": 19500,
+        "description": "Одновременная зарядка для смартфона, умных часов и беспроводных наушников.",
+        "image_url": "https://images.pexels.com/photos/6801681/pexels-photo-6801681.jpeg?auto=compress&cs=tinysrgb&w=500"
+    },
+    {
+        "id": 11,
+        "name": "Рюкзак для ноутбука 15.6\"",
+        "price": 17000,
+        "description": "Водонепроницаемый материал, ортопедическая спинка и USB-порт для зарядки.",
+        "image_url": "https://images.pexels.com/photos/2905238/pexels-photo-2905238.jpeg?auto=compress&cs=tinysrgb&w=500"
+    },
+    {
+        "id": 12,
+        "name": "Светодиодная кольцевая лампа",
+        "price": 11200,
+        "description": "Диаметр 36 см, напольный штатив, управление яркостью и цветовой температурой.",
+        "image_url": "https://images.pexels.com/photos/7241415/pexels-photo-7241415.jpeg?auto=compress&cs=tinysrgb&w=500"
+    },
+    {
+        "id": 13,
+        "name": "USB-хаб 5-в-1 Type-C",
+        "price": 9800,
+        "description": "Алюминиевый корпус, порты HDMI 4K, USB 3.0 и слоты для карт SD/MicroSD.",
+        "image_url": "https://images.pexels.com/photos/4000013/pexels-photo-4000013.jpeg?auto=compress&cs=tinysrgb&w=500"
+    },
+    {
+        "id": 14,
+        "name": "Игровой коврик для мыши XXL",
+        "price": 7500,
+        "description": "Размер 900x400 мм, прошитые края, нескользящее резиновое основание.",
+        "image_url": "https://images.pexels.com/photos/331684/pexels-photo-331684.jpeg?auto=compress&cs=tinysrgb&w=500"
+    },
+    {
+        "id": 15,
+        "name": "Студийный USB-микрофон",
+        "price": 29900,
+        "description": "Кардиоидная направленность, подставка-тренога и поп-фильтр в комплекте.",
+        "image_url": "https://images.pexels.com/photos/3783471/pexels-photo-3783471.jpeg?auto=compress&cs=tinysrgb&w=500"
+    },
+    {
+        "id": 16,
+        "name": "Умная светодиодная лента 5м",
+        "price": 13400,
+        "description": "RGB подсветка с управлением со смартфона и поддержкой голосовых ассистентов.",
+        "image_url": "https://images.pexels.com/photos/4857775/pexels-photo-4857775.jpeg?auto=compress&cs=tinysrgb&w=500"
+    },
+    {
+        "id": 17,
+        "name": "Вертикальная беспроводная мышь",
+        "price": 15600,
+        "description": "Эргономичная форма для снижения нагрузки на кисть при долгой работе.",
+        "image_url": "https://images.pexels.com/photos/3920183/pexels-photo-3920183.jpeg?auto=compress&cs=tinysrgb&w=500"
+    },
+    {
+        "id": 18,
+        "name": "Кронштейн для двух мониторов",
+        "price": 26000,
+        "description": "Настольное крепление с газлифтом, регулировка наклона и поворота.",
+        "image_url": "https://images.pexels.com/photos/7915357/pexels-photo-7915357.jpeg?auto=compress&cs=tinysrgb&w=500"
+    },
+    {
+        "id": 19,
+        "name": "Охлаждающая подставка для ноутбука",
+        "price": 12800,
+        "description": "Два мощных тихих вентилятора, синяя подсветка и регулировка угла наклона.",
+        "image_url": "https://images.pexels.com/photos/129208/pexels-photo-129208.jpeg?auto=compress&cs=tinysrgb&w=500"
+    },
+    {
+        "id": 20,
+        "name": "Графический планшет",
+        "price": 38500,
+        "description": "Рабочая область 10х6 дюймов, пассивное перо с 8192 уровнями нажатия.",
+        "image_url": "https://images.pexels.com/photos/434846/pexels-photo-434846.jpeg?auto=compress&cs=tinysrgb&w=500"
     }
 ]
