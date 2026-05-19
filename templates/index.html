@@ -36,6 +36,13 @@
     {% endwith %}
 
     <main>
+        <form action="{{ url_for('index') }}" method="GET" style="margin-bottom: 2rem; display: flex; gap: 10px;">
+            <input type="text" name="search" value="{{ search_query }}" placeholder="Поиск по названию или описанию..." style="flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem;">
+            <button type="submit" class="btn" style="width: auto; margin: 0; padding: 10px 20px;">Найти</button>
+            {% if search_query %}
+                <a href="{{ url_for('index') }}" class="btn btn-secondary" style="width: auto; padding: 10px 20px; text-decoration: none; line-height: 1.5;">Сбросить</a>
+            {% endif %}
+        </form>
     <h2>Наши товары</h2>
     <div class="products-grid">
         {% for product in products %}

@@ -25,13 +25,23 @@ def save_json(filename, data):
 
 @app.route('/')
 def index():
-    # Если пользователя нет в сессии (он не вошел), сразу отправляем его на страницу логина
     if 'user' not in session:
         return redirect(url_for('login'))
         
-    # Если он вошел, то показываем товары как обычно
     products = load_json(PRODUCTS_FILE, [])
-    return render_template('index.html', products=products)
+    
+    # Получаем поисковый запрос из строки URL (например, /?search=наушники)
+    search_query = request.args.get('search', '').strip().lower()
+    
+    # Если запрос есть, фильтруем список товаров
+    if search_query:
+        filtered_products = []
+        for p in products:
+            if search_query in p['name'].lower() or search_query in p['description'].lower():
+                filtered_products.append(p)
+        products = filtered_products
+
+    return render_template('index.html', products=products, search_query=search_query)
 
 # ================= АВТОРИЗАЦИЯ И РЕГИСТРАЦИЯ =================
 
@@ -200,10 +210,25 @@ def checkout():
         return redirect(url_for('index'))
         
     if request.method == 'POST':
-        name = request.form.get('name')
-        phone = request.form.get('phone')
-        address = request.form.get('address')
+        name = request.form.get('name').strip()
+        phone = request.form.get('phone').strip()
+        address = request.form.get('address').strip()
         
+        # === ВАЛИДАЦИЯ НОМЕРА ТЕЛЕФОНА ===
+        # Очищаем номер от скобок, дефисов и пробелов, оставляя только цифры и плюс
+        clean_phone = "".join([c for c in phone if c.isdigit() or c == '+'])
+        
+        # Проверяем условия:
+        # 1. Должен начинаться на +7 или 8
+        # 2. Длина должна быть корректной (12 символов для +7... или 11 для 8...)
+        is_valid_kazakh = (clean_phone.startswith('+7') and len(clean_phone) == 12) or \
+                          (clean_phone.startswith('8') and len(clean_phone) == 11)
+                          
+        if not is_valid_kazakh:
+            flash('Неверный формат номера! Используйте формат +7 (707) 123-45-67 или 87071234567', 'danger')
+            return render_template('checkout.html', success=False)
+        # ==================================
+
         products = load_json(PRODUCTS_FILE, [])
         orders = load_json(ORDERS_FILE, [])
         
@@ -218,11 +243,11 @@ def checkout():
         
         new_order = {
             'id': len(orders) + 1,
-            'user_id': session['user']['id'],  # Привязываем заказ к пользователю
-            'customer': {'name': name, 'phone': phone, 'address': address},
+            'user_id': session['user']['id'],
+            'customer': {'name': name, 'phone': clean_phone, 'address': address}, # Сохраняем уже чистый номер
             'items': order_items,
             'total_price': total_price,
-            'status': 'pending'
+            'status': 'paid'  # Ставим "Оплачен", так как смс-код мы убрали
         }
         
         orders.append(new_order)
